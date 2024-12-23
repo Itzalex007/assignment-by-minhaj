@@ -24,7 +24,7 @@ const Step2 = ({ formData, setFormData }) => {
       <label>
         Street:
         <input
-        className="text-black"
+       className="w-full p-2 border rounded text-black"
           type="text"
           name="street"
           value={addressDetails.street}
@@ -34,7 +34,7 @@ const Step2 = ({ formData, setFormData }) => {
       <label>
         City:
         <input
-        className="text-black"
+       className="w-full p-2 border rounded text-black"
           type="text"
           name="city"
           value={addressDetails.city}
@@ -44,7 +44,7 @@ const Step2 = ({ formData, setFormData }) => {
       <label>
         Zip:
         <input
-        className="text-black"
+       className="w-full p-2 border rounded text-black"
           type="text"
           name="zip"
           value={addressDetails.zip}

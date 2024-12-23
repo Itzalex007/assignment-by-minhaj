@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const Step1 = ({ formData, setFormData }) => {
   const [personalInfo, setPersonalInfo] = useState(formData.personalInfo);
+  const [empty, setEmpty] = useState("");
 
   useEffect(() => {
     // Update local state when formData changes (for the initial load)
@@ -11,6 +12,7 @@ const Step1 = ({ formData, setFormData }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setPersonalInfo((prev) => ({ ...prev, [name]: value }));
+    setEmpty(value)
   };
 
   const handleSave = () => {
@@ -24,17 +26,17 @@ const Step1 = ({ formData, setFormData }) => {
       <label>
         Name:
         <input
-        className="text-black"
+        className="w-full p-2 border rounded text-black"
           type="text"
           name="name"
-          value={personalInfo.name}
+          value={personalInfo.name || empty }
           onChange={handleChange}
         />
       </label>
       <label>
         Email:
         <input
-        className="text-black"
+        className="w-full p-2 border rounded text-black"
           type="email"
           name="email"
           value={personalInfo.email}
